@@ -42,7 +42,9 @@ export default function RetroFeedbackPage() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            user: formData.name,
+            user: {
+              username: formData.name
+            },
             email: formData.email,
             rating: formData.rating,
             review: formData.review,
