@@ -35,7 +35,6 @@ export default function RetroFeedbackPage() {
         if (!serverUrl) {
           throw new Error("Server URL not configured")
         }
-        console.log(`${serverUrl}`)
         const response = await fetch(`${serverUrl}/api/feedback/submit`, {
           method: "POST",
           headers: {
