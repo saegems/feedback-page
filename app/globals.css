@@ -1,0 +1,177 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match retro purple/pink palette */
+  --background: #e6e6fa; /* Light Lavender for main background */
+  --foreground: #4b0082; /* Indigo for text */
+  --card: #d8bfd8; /* Thistle for cards */
+  --card-foreground: #4b0082; /* Indigo for card text */
+  --popover: #b19cd9; /* Light Purple for popovers */
+  --popover-foreground: #4b0082; /* Indigo for popover text */
+  --primary: #4b0082; /* Indigo for primary buttons */
+  --primary-foreground: #e6e6fa; /* Light Lavender for button text */
+  --secondary: #6b5b95; /* Purple for secondary actions */
+  --secondary-foreground: #e6e6fa; /* Light Lavender for secondary button text */
+  --muted: #d8bfd8; /* Thistle for muted text */
+  --muted-foreground: #4b0082; /* Indigo for muted text foreground */
+  --accent: #5e4b8b; /* Dark Purple for accents */
+  --accent-foreground: #e6e6fa; /* Light Lavender for accent text */
+  --destructive: #ff4d4d; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White for destructive button text */
+  --border: #b19cd9; /* Light Purple for borders */
+  --input: #e6e6fa; /* Light Lavender for input backgrounds */
+  --ring: #4b0082; /* Indigo for focus rings */
+  --chart-1: #6b5b95; /* Chart color 1 */
+  --chart-2: #5e4b8b; /* Chart color 2 */
+  --chart-3: #d8bfd8; /* Chart color 3 */
+  --chart-4: #b19cd9; /* Chart color 4 */
+  --chart-5: #e6e6fa; /* Chart color 5 */
+  --radius: 0.5rem; /* Rounded corners */
+  --sidebar: #b19cd9; /* Sidebar background */
+  --sidebar-foreground: #4b0082; /* Sidebar text */
+  --sidebar-primary: #6b5b95; /* Sidebar primary */
+  --sidebar-primary-foreground: #e6e6fa; /* Sidebar primary text */
+  --sidebar-accent: #5e4b8b; /* Sidebar accent */
+  --sidebar-accent-foreground: #e6e6fa; /* Sidebar accent text */
+  --sidebar-border: #d8bfd8; /* Sidebar border */
+  --sidebar-ring: #4b0082; /* Sidebar ring */
+}
+
+.dark {
+  /* Updated dark mode colors to maintain retro aesthetic */
+  --background: #2d1b69; /* Dark purple background */
+  --foreground: #e6e6fa; /* Light lavender text */
+  --card: #4b0082; /* Indigo cards */
+  --card-foreground: #e6e6fa; /* Light lavender card text */
+  --popover: #5e4b8b; /* Dark purple popovers */
+  --popover-foreground: #e6e6fa; /* Light lavender popover text */
+  --primary: #b19cd9; /* Light purple primary */
+  --primary-foreground: #2d1b69; /* Dark purple button text */
+  --secondary: #6b5b95; /* Purple secondary */
+  --secondary-foreground: #e6e6fa; /* Light lavender secondary text */
+  --muted: #5e4b8b; /* Dark purple muted */
+  --muted-foreground: #d8bfd8; /* Thistle muted text */
+  --accent: #d8bfd8; /* Thistle accents */
+  --accent-foreground: #2d1b69; /* Dark purple accent text */
+  --destructive: #ff6b6b; /* Lighter red for dark mode */
+  --destructive-foreground: #ffffff; /* White destructive text */
+  --border: #6b5b95; /* Purple borders */
+  --input: #4b0082; /* Indigo inputs */
+  --ring: #b19cd9; /* Light purple focus rings */
+  --chart-1: #b19cd9;
+  --chart-2: #d8bfd8;
+  --chart-3: #6b5b95;
+  --chart-4: #5e4b8b;
+  --chart-5: #e6e6fa;
+  --sidebar: #4b0082;
+  --sidebar-foreground: #e6e6fa;
+  --sidebar-primary: #b19cd9;
+  --sidebar-primary-foreground: #2d1b69;
+  --sidebar-accent: #6b5b95;
+  --sidebar-accent-foreground: #e6e6fa;
+  --sidebar-border: #5e4b8b;
+  --sidebar-ring: #b19cd9;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  /* Added Jersey 25 font variable */
+  --font-jersey: var(--font-jersey-25);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added retro pixelated styles and animations */
+  .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .retro-glow {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+
+  .retro-title {
+    color: #6e6ced;
+    padding: 16px 24px;
+    display: inline-block;
+    font-family: var(--font-jersey-25);
+  }
+
+  .retro-border {
+    border-style: solid;
+    border-width: 1px;
+    border-image: linear-gradient(45deg, #4b0082, #6b5b95, #b19cd9) 1;
+  }
+
+  .crt-effect {
+    background: linear-gradient(90deg, transparent 50%, rgba(0, 255, 0, 0.03) 50%),
+      linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+    background-size: 2px 2px;
+  }
+
+  @keyframes pixel-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .pixel-pulse {
+    animation: pixel-pulse 2s ease-in-out infinite;
+  }
+
+  .jersey-font {
+    font-family: var(--font-jersey-25);
+  }
+}
