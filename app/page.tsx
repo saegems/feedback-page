@@ -163,7 +163,7 @@ export default function RetroFeedbackPage() {
                 <Textarea
                   id="review"
                   value={formData.review}
-                  onChange={(e) => setFormData({ ...formData, review: e.target.review })}
+                  onChange={(e) => setFormData({ ...formData, review: e.target.value })}
                   className="retro-border bg-input/50 focus:bg-input transition-colors min-h-[120px]"
                   placeholder="Share your chatting experience..."
                   required
